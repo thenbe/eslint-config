@@ -1,5 +1,5 @@
 {
-  "name": "@antfu/eslint-config",
+  "name": "@thenbe/eslint-config",
   "type": "module",
   "version": "1.1.0",
   "packageManager": "pnpm@8.10.2",
@@ -51,6 +51,7 @@
     "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "eslint-plugin-perfectionist": "^2.2.0",
+    "eslint-plugin-svelte": "^2.34.1",
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vitest": "^0.3.8",
@@ -59,6 +60,8 @@
     "globals": "^13.23.0",
     "jsonc-eslint-parser": "^2.4.0",
     "local-pkg": "^0.5.0",
+    "svelte": "^4.2.2",
+    "svelte-eslint-parser": "^0.33.1",
     "vue-eslint-parser": "^9.3.2",
     "yaml-eslint-parser": "^1.2.2"
   },
