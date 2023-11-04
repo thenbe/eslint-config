@@ -158,6 +158,13 @@ export interface OptionsConfig extends OptionsComponentExts {
   test?: boolean
 
   /**
+   * Enable Svelte support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  svelte?: boolean
+
+  /**
    * Enable Vue support.
    *
    * @default auto-detect based on the dependencies
@@ -217,5 +224,6 @@ export interface OptionsConfig extends OptionsComponentExts {
     markdown?: FlatConfigItem['rules']
     yaml?: FlatConfigItem['rules']
     react?: FlatConfigItem['rules']
+    svelte?: FlatConfigItem['rules']
   }
 }

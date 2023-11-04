@@ -1,5 +1,5 @@
 {
-  "name": "@antfu/eslint-config",
+  "name": "@thenbe/eslint-config",
   "type": "module",
   "version": "2.1.0",
   "packageManager": "pnpm@8.10.5",
@@ -71,6 +71,7 @@
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "eslint-plugin-perfectionist": "^2.4.0",
+    "eslint-plugin-svelte": "^2.34.1",
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vitest": "^0.3.10",
@@ -82,14 +83,16 @@
     "parse-gitignore": "^2.0.0",
     "picocolors": "^1.0.0",
     "prompts": "^2.4.2",
+    "svelte": "^4.2.2",
+    "svelte-eslint-parser": "^0.33.1",
     "vue-eslint-parser": "^9.3.2",
     "yaml-eslint-parser": "^1.2.2",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "workspace:*",
     "@antfu/ni": "^0.21.10",
     "@stylistic/eslint-plugin-migrate": "^1.4.0",
+    "@thenbe/eslint-config": "workspace:*",
     "@types/eslint": "^8.44.7",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.9.4",
