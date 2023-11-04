@@ -16,6 +16,7 @@ import {
   sortPackageJson,
   sortTsconfig,
   stylistic,
+  svelte,
   test,
   toml,
   typescript,
@@ -38,6 +39,10 @@ const flatConfigProps: (keyof FlatConfigItem)[] = [
   'settings',
 ]
 
+const SveltePackages = [
+  'svelte',
+]
+
 const VuePackages = [
   'vue',
   'nuxt',
@@ -58,6 +63,7 @@ export async function antfu(
     isInEditor = !!((process.env.VSCODE_PID || process.env.JETBRAINS_IDE) && !process.env.CI),
     overrides = {},
     react: enableReact = false,
+    svelte: enableSvelte = SveltePackages.some(i => isPackageExists(i)),
     typescript: enableTypeScript = isPackageExists('typescript'),
     unocss: enableUnoCSS = false,
     vue: enableVue = VuePackages.some(i => isPackageExists(i)),
@@ -124,6 +130,14 @@ export async function antfu(
     configs.push(test({
       isInEditor,
       overrides: overrides.test,
+    }))
+  }
+
+  if (enableSvelte) {
+    configs.push(svelte({
+      overrides: overrides.svelte,
+      stylistic: stylisticOptions,
+      typescript: !!enableTypeScript,
     }))
   }
 
