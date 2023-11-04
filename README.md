@@ -1,3 +1,9 @@
+This is a fork of [@antfu/eslint-config](https://github.com/antfu/eslint-config) that adds svelte support.
+
+```bash
+npm install -D @antfu/eslint-config@npm:@thenbe/eslint-config@latest
+```
+
 # @antfu/eslint-config
 
 [![npm](https://img.shields.io/npm/v/@antfu/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config) [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
