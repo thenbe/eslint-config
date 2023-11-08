@@ -53,6 +53,13 @@ export async function svelte(
       rules: {
         'import/no-mutable-exports': 'off',
         'no-undef': 'off', // incompatible with generic types (attribute-form)
+        'no-unused-vars': ['error', {
+          args: 'none',
+          caughtErrors: 'none',
+          ignoreRestSiblings: true,
+          vars: 'all',
+          varsIgnorePattern: '^\\$\\$Props$',
+        }],
 
         ...pluginSvelte.configs.recommended.rules as any,
         'svelte/no-dom-manipulating': 'warn',
@@ -70,16 +77,13 @@ export async function svelte(
         'svelte/require-stores-init': 'error',
         'svelte/valid-each-key': 'error',
 
+        'unused-imports/no-unused-vars': [
+          'error',
+          { args: 'after-used', argsIgnorePattern: '^_', vars: 'all', varsIgnorePattern: '^(_|\\$\\$Props$)' },
+        ],
+
         ...stylistic
           ? {
-              'no-unused-vars': ['error', {
-                args: 'none',
-                caughtErrors: 'none',
-                ignoreRestSiblings: true,
-                vars: 'all',
-                varsIgnorePattern: '^\\$\\$Props$',
-              }],
-
               'style/no-trailing-spaces': 'off', // superseded by svelte/no-trailing-spaces
               'svelte/derived-has-same-inputs-outputs': 'error',
               'svelte/first-attribute-linebreak': 'error',
@@ -107,11 +111,6 @@ export async function svelte(
               'svelte/shorthand-directive': 'error',
               // 'svelte/sort-attributes': 'error',
               'svelte/spaced-html-comment': 'error',
-
-              'unused-imports/no-unused-vars': [
-                'error',
-                { args: 'after-used', argsIgnorePattern: '^_', vars: 'all', varsIgnorePattern: '^(_|\\$\\$Props$)' },
-              ],
             }
           : {},
 
