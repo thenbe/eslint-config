@@ -72,6 +72,14 @@ export async function svelte(
 
         ...stylistic
           ? {
+              'no-unused-vars': ['error', {
+                args: 'none',
+                caughtErrors: 'none',
+                ignoreRestSiblings: true,
+                vars: 'all',
+                varsIgnorePattern: '^\\$\\$Props$',
+              }],
+
               'style/no-trailing-spaces': 'off', // superseded by svelte/no-trailing-spaces
               'svelte/derived-has-same-inputs-outputs': 'error',
               'svelte/first-attribute-linebreak': 'error',
@@ -99,6 +107,11 @@ export async function svelte(
               'svelte/shorthand-directive': 'error',
               // 'svelte/sort-attributes': 'error',
               'svelte/spaced-html-comment': 'error',
+
+              'unused-imports/no-unused-vars': [
+                'error',
+                { args: 'after-used', argsIgnorePattern: '^_', vars: 'all', varsIgnorePattern: '^(_|\\$\\$Props$)' },
+              ],
             }
           : {},
 
