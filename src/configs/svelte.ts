@@ -76,6 +76,7 @@ export async function svelte(
         'svelte/require-store-callbacks-use-set-param': 'error',
         'svelte/require-stores-init': 'error',
         'svelte/valid-each-key': 'error',
+        'ts/no-throw-literal': 'off', // incompatible with sveltekit's error handling
 
         'unused-imports/no-unused-vars': [
           'error',
