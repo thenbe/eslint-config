@@ -496,6 +496,24 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 npm i -D eslint-plugin-svelte
 ```
 
+You can also enable type-aware linting in svelte files:
+
+```js
+// eslint.config.js
+import antfu from '@antfu/eslint-config'
+
+export default antfu({
+  svelte: true,
+  typescript: {
+    tsconfigPath: 'tsconfig.json',
+    filesTypeAware: [`**\/*.{ts,svelte}`],
+    parserOptions: {
+      extraFileExtensions: ['.svelte'],
+    },
+  },
+})
+```
+
 #### Astro
 
 To enable astro support, you need to explicitly turn it on:
